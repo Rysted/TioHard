@@ -1,0 +1,132 @@
+/* [data-theme="light"] */
+:root {
+  --html: #131026; /* HTML */
+  --secondary: #201b3a; /* Highlighted, Header, Footer */
+  --tertiary: #2f2949;
+  --text: #fbfbfb; /* Buttons */
+  --paragraph: #dedede; /* Title */
+  --senary: #9a9a9a; /* paragraph */
+  --septenary: #4a35ce; /* Important */
+
+  /*   --html: #fbfbfb;
+  --secondary: #dedede;
+  --tertiary: #9a9a9a;
+  --quaternary: #b75dbc;
+  --quinary: #79249b;
+  --senary: #470c4b; */
+}
+
+[data-theme="dark"] {
+  --html: #131026; /* HTML */
+  --secondary: #201b3a; /* Highlighted, Header, Footer */
+  --tertiary: #2f2949;
+  --text: #fbfbfb; /* Buttons */
+  --paragraph: #dedede; /* Title */
+  --senary: #9a9a9a; /* paragraph */
+  --septenary: #4a35ce; /* Important */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  /* outline: 0.1rem solid #1b1997; */
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--html);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+svg {
+  display: block;
+}
+
+/*' highlighted */
+.highlighted-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #201b3a;
+}
+
+.contact__list {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.contact__img {
+  width: 3.5rem;
+}
+
+/* selected-mode */
+.selected-mode {
+  background-color: var(--tertiary);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  color: var(--text);
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.selected-mode:hover {
+  opacity: 0.8;
+}
+
+/*' Header */
+.header {
+  background-color: var(--secondary);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burgerMenu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.burgerMenu:hover {
+  opacity: 0.8;
+}
+
+.burgerMenu-svg {
+  fill: var(--text);
+  width: 4.5rem;
+}
+
+.logo-tiohard {
+  width: 12rem;
+  fill: var(--text);
+}
+
+.button-login {
+  background-color: var(--septenary);
+  padding: 1rem;
+  white-space: nowrap;
+  border-radius: 0.5rem;
+  color: var(--text);
+}
+
+.button-login:hover {
+  opacity: 0.8;
+}
