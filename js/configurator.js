@@ -1,11 +1,11 @@
-/* El código utiliza la asignación de desestructuración, para obtener referencias a los elementos del DOM. */
+// El código utiliza la asignación de desestructuración para obtener referencias a los elementos del DOM.
 const [THEME_SELECT, HTML_ELEMENT, GET_STORAGE] = [
   document.getElementById("theme"),
   document.documentElement,
   localStorage.getItem("theme"),
 ];
 
-/* El código crea una matriz de funciones flechas y las asigna a las constantes, para establecer y eliminar el tema en el almacenamiento local y en el HTML */
+// El código crea una matriz de funciones flechas y las asigna a las constantes para establecer y eliminar el tema en el almacenamiento local y en el HTML.
 const [SET_STORAGE, REM_STORAGE, SET_THEME, REM_THEME] = [
   (theme) => localStorage.setItem("theme", theme),
   () => localStorage.removeItem("theme"),
@@ -13,23 +13,22 @@ const [SET_STORAGE, REM_STORAGE, SET_THEME, REM_THEME] = [
   () => HTML_ELEMENT.removeAttribute("data-theme"),
 ];
 
-// Establecer el tema almacenado previamente, si existe
-/* El código verifica si hay un valor almacenado en la variable `GET_STORAGE` (que representa el tema almacenado en el almacenamiento local). Si hay un valor, llama a la función `SET_THEME` y pasa el tema almacenado como argumento. 
-Esto se hace para establecer el tema en el elemento HTML cuando se carga la página, de modo que se muestre el tema correcto en función del valor almacenado. */
+// Establece el tema almacenado previamente, si existe.
 if (GET_STORAGE) {
   SET_THEME(GET_STORAGE);
 }
 
-// Manejar el evento "change" del selector de tema
-/* El código agrega un detector de eventos al elemento `THEME_SELECT`, que representa un selector para elegir un tema.
-El evento que se escucha es el evento de "cambio", que se activa cuando el usuario selecciona una opción diferente en el selector de temas. */
+// Escucha el tema seleccionado en la etiqueta "select".
 THEME_SELECT.addEventListener("change", () => {
+  // Realiza acciones basadas en el valor de la etiqueta "select".
   switch (THEME_SELECT.value) {
     case "dark":
+      // Si es "dark", lo almacena en el almacenamiento local y agrega en el HTML.
       SET_STORAGE("dark");
       SET_THEME("dark");
       break;
     default:
+      // Elimina el elemento almacenado en el almacenamiento local y en el HTML.
       REM_STORAGE();
       REM_THEME();
       break;
