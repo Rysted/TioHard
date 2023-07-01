@@ -1,19 +1,11 @@
-/* [data-theme="light"] */
 :root {
-  --html: #131026; /* HTML */
-  --secondary: #201b3a; /* Highlighted, Header, Footer */
+  --html: #fbfbfb;
+  --secondary: #201b3a;
   --tertiary: #2f2949;
-  --text: #fbfbfb; /* Buttons */
-  --paragraph: #dedede; /* Title */
-  --senary: #9a9a9a; /* paragraph */
-  --septenary: #4a35ce; /* Important */
-
-  /*   --html: #fbfbfb;
-  --secondary: #dedede;
-  --tertiary: #9a9a9a;
-  --quaternary: #b75dbc;
-  --quinary: #79249b;
-  --senary: #470c4b; */
+  --text: #020202;
+  --paragraph: #dedede;
+  --senary: #9a9a9a;
+  --septenary: #4a35ce;
 }
 
 [data-theme="dark"] {
@@ -74,13 +66,12 @@ svg {
   width: 3.5rem;
 }
 
-/* selected-mode */
 .selected-mode {
   background-color: var(--tertiary);
   border-radius: 0.5rem;
   padding: 0.5rem;
   border: none;
-  color: var(--text);
+  color: white;
   font-weight: bold;
   font-size: 2rem;
   cursor: pointer;
@@ -93,10 +84,11 @@ svg {
 /*' Header */
 .header {
   background-color: var(--secondary);
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .burgerMenu {
@@ -110,23 +102,241 @@ svg {
 }
 
 .burgerMenu-svg {
-  fill: var(--text);
   width: 4.5rem;
 }
 
 .logo-tiohard {
-  width: 12rem;
-  fill: var(--text);
+  width: 14rem;
 }
 
-.button-login {
-  background-color: var(--septenary);
-  padding: 1rem;
-  white-space: nowrap;
-  border-radius: 0.5rem;
-  color: var(--text);
+.nav__item {
+  display: none;
 }
 
-.button-login:hover {
-  opacity: 0.8;
+.login-item {
+  display: block;
+}
+
+.login__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login__svg {
+  width: 3rem;
+}
+
+.login__title {
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  color: white;
+}
+
+/*' search */
+.form-search {
+  display: flex;
+  background-color: #fefefe;
+  padding: 0.4rem;
+  position: relative;
+}
+
+.form-search__img {
+  width: 2rem;
+}
+
+.form-search__icon {
+  background-color: transparent;
+  border: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  cursor: pointer;
+}
+
+.form-search__icon:hover {
+  opacity: 0.9;
+}
+
+.form-search__input {
+  width: 100%;
+  padding-top: 0.5rem;
+  padding-right: 2rem;
+  padding-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--tertiary);
+  border: none;
+}
+
+.form-search__input:focus {
+  outline: none;
+}
+
+.form-search__clear {
+  opacity: 0;
+  padding: 0.2rem;
+  position: absolute;
+  right: 0.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.2s ease;
+}
+
+#rgb {
+  height: 0.3rem;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 0, 255, 1) 18%,
+    rgb(78 3 134) 30%,
+    #f4524d 45%,
+    rgb(204 0 255) 63%,
+    rgb(228 0 255) 80%,
+    rgba(255, 141, 16, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  animation: gradientAnimation 5s linear infinite;
+  background-size: 200% 100%;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 200% 0%;
+  }
+  100% {
+    background-position: 0% 200%;
+  }
+}
+
+/*' Main */
+main {
+  padding: 100rem 0;
+}
+
+/*' banner-upgrade */
+/* .banner-upgrade {
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-image: url(../image/celular/joshua-kettle.jpg);
+}
+
+.upgrade__img-wrapper {
+  height: 100%;
+}
+
+.combo {
+  animation: moveUpDown 2s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} 
+
+.upgrade__img {
+  margin-top: 2rem;
+}
+*/
+
+/*! ------------------ */
+/*!    Query Tablet    */
+/*! ------------------ */
+@media (min-width: 480px) {
+  .logo-tiohard {
+    width: 20rem;
+  }
+}
+/*! ------------------ */
+/*!    Query Laptop    */
+/*! ------------------ */
+@media (min-width: 768px) {
+  /*' highlighted */
+  .highlighted-container {
+    padding: 1rem 2rem;
+  }
+
+  .selected-mode {
+    padding: 1rem;
+  }
+
+  /*' Header */
+  .header {
+    padding: 0rem 2rem;
+  }
+
+  .burgerMenu {
+    display: none;
+  }
+
+  .nav__item {
+    display: block;
+  }
+
+  .nav__list {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    column-gap: 2rem;
+  }
+
+  .nav__link {
+    color: #ffffff;
+  }
+}
+/*! ------------------ */
+/*!      Query PC      */
+/*! ------------------ */
+@media (min-width: 1500px) {
+  /*' highlighted */
+  .contact__img {
+    width: 5rem;
+  }
+
+  .selected-mode {
+    font-size: 4rem;
+  }
+  /*' Header */
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .logo-tiohard {
+    width: 40rem;
+  }
+
+  .nav__list {
+    font-size: 3rem;
+    column-gap: 3rem;
+  }
+
+  .login__svg {
+    width: 6rem;
+  }
+
+  .login__title {
+    font-size: 1.5rem;
+  }
+
+  /*' search */
+
+  .form-search__input {
+    font-size: 2rem;
+    padding-right: 6rem;
+  }
+
+  #rgb {
+    height: 0.8rem;
+  }
 }
