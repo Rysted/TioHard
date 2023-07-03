@@ -15,9 +15,14 @@ FORM.addEventListener("submit", (e) => {
 
 // Escucha al "INPUT" cuando se cambia el valor.
 INPUT.addEventListener("input", () => {
-  INPUT?.value.length > 0
-    ? clear_style("1", "pointer") // Aplica estilos al botón "CLEAR", cuando el "INPUT" tiene una longitud mayor a cero.
-    : clear_style("0", "default"); // Aplica estilos al botón "CLEAR", cuando el "INPUT" está vacío.
+  // Aplica estilos al botón "CLEAR", cuando el "INPUT" tiene una longitud mayor a cero.
+  // Aplica estilos al botón "CLEAR", cuando el "INPUT" está vacío.
+
+  if (INPUT.value.length >= 1) {
+    clear_style("1", "pointer");
+  } else {
+    clear_style("0", "default");
+  }
 });
 
 // Escucha al botón "CLEAR" cuando se hace clic.

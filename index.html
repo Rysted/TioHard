@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 
     <!-- Etiquetas meta para SEO -->
     <meta
@@ -33,7 +33,7 @@
     <title>TioHard - Tu tienda confiable de hardware de computación</title>
   </head>
   <body>
-    <section class="highlighted-container">
+    <div class="highlighted-container">
       <ul class="contact__list">
         <li class="contact__item">
           <a
@@ -92,10 +92,11 @@
         <option value="light">Claro</option>
         <option value="dark">Oscuro</option>
       </select>
-    </section>
-    <header>
+    </div>
+
+    <header id="header-sticky">
       <div class="header">
-        <button class="burgerMenu" id="toggle-menu" aria-label="Abrir menú">
+        <button class="burgerMenu" id="open_menu" aria-label="Abrir menú">
           <img
             class="burgerMenu-svg"
             src="./image/icons/burger-menu.svg"
@@ -118,40 +119,59 @@
         <nav class="header__nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#" class="nav__link" rel="nofollow noreferrer"
+              <a
+                href="#"
+                class="nav__link"
+                rel="nofollow"
+                aria-label="Enlace a la página principal"
                 >Principal</a
               >
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link" rel="nofollow noreferrer"
-                >Destacado</a
+              <a
+                href="#"
+                class="nav__link"
+                rel="nofollow"
+                aria-label="Enlace a la página destacada"
+                >Productos</a
               >
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__link" rel="nofollow noreferrer"
-                >Arma tu Pc</a
+              <a
+                href="#"
+                class="nav__link"
+                rel="nofollow"
+                aria-label="Enlace a la página de armado de PC"
+                >Categorías</a
               >
             </li>
-            <li class="nav__item login-item">
+            <li class="nav__item">
               <a
-                class="login__link"
+                class="nav__link"
                 href="#"
                 aria-label="Ir a la página de inicio de sesión"
+                >Iniciar sesión</a
               >
-                <img
-                  class="login__svg"
-                  src="./image/icons/user.svg"
-                  alt="Icono de usuario"
-                />
-                <b class="login__title">Iniciar sesión</b>
-              </a>
             </li>
           </ul>
         </nav>
+
+        <a
+          class="login__link login-phone"
+          href="#"
+          aria-label="Ir a la página de inicio de sesión"
+        >
+          <img
+            class="login__img"
+            src="./image/icons/user.svg"
+            alt="Icono de usuario"
+          />
+          <b class="login__title">Iniciar sesión</b>
+        </a>
       </div>
 
       <form class="form-search" id="form_search" action="/search" method="GET">
-        <button class="form-search__icon">
+        <button class="form-search__icon" aria-label="Botón de búsqueda">
           <img
             class="form-search__img"
             src="./image/icons/search.svg"
@@ -166,40 +186,115 @@
           placeholder="Buscar productos, marcas o categorías"
           name="keywords"
         />
-        <img
-          class="form-search__clear form-search__img"
+        <svg
+          aria-label="Botón de limpiar búsqueda"
           id="search_clear"
-          src="./image/icons/cancel.svg"
-          alt=""
-        />
+          class="form-search__clear"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M2 18L10 10ZM18 2L9.99847 10ZM9.99847 10L2 2ZM10 10L18 18Z"
+          ></path>
+        </svg>
       </form>
       <div id="rgb"></div>
     </header>
+
+    <div class="menu">
+      <nav class="nav" id="nav_menu">
+        <button
+          class="nav__button-close"
+          id="close_menu"
+          aria-label="Botón de cerrar menú"
+        >
+          <svg
+            class="nav__close-menu"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2 18L10 10ZM18 2L9.99847 10ZM9.99847 10L2 2ZM10 10L18 18Z"
+            ></path>
+          </svg>
+        </button>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a
+              href="#"
+              class="nav__link"
+              rel="nofollow"
+              aria-label="Enlace a la página principal"
+              >Principal</a
+            >
+          </li>
+          <li class="nav__item">
+            <a
+              href="#"
+              class="nav__link"
+              rel="nofollow"
+              aria-label="Enlace a la página destacada"
+              >Productos</a
+            >
+          </li>
+          <li class="nav__item">
+            <a
+              href="#"
+              class="nav__link"
+              rel="nofollow"
+              aria-label="Enlace a la página de armado de PC"
+              >Categorías</a
+            >
+          </li>
+          <li class="nav__item">
+            <a
+              class="nav__link"
+              href="#"
+              aria-label="Ir a la página de inicio de sesión"
+              >Iniciar sesión</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
     <main>
-      <!-- <section class="banner-upgrade">
-        <div class="upgrade__img-wrapper">
-          <img
-            class="upgrade__img"
-            src="./image/celular/regalate-un-upgrade.png"
-            alt="Imagen del banner regalate un upgrade"
-          />
-        </div>
-        <div class="upgrade__img-wrapper combo">
-          <img
-            class="upgrade__img"
-            src="./image/celular/combo-izquierda.png"
-            alt="Imagen del combo izquierdo"
-          />
-          <img
-            class="upgrade__img"
-            src="./image/celular/combo-derecha.png"
-            alt="Imagen del combo derecho"
-          />
-        </div>
-      </section> -->
+      <section class="campaign">
+        <h1 class="campaign__title">Regalate un upgrade</h1>
+        <img
+          class="campaign__img"
+          src="./image/grafica.png"
+          alt="Imagen de tarjeta grafica"
+        />
+        <a
+          class="campaign__link"
+          href="#"
+          aria-label="Ir a la página de productos"
+        >
+          <b class="campaign__text">Ver Productos</b>
+        </a>
+      </section>
+      <section class="best-sellers">
+        <h2>LOS MÁS VENDIDOS</h2>
+        <article class="product">
+          <img src="" alt="" />
+          <div>
+            <img src="" alt="" />
+            <p>Entrega inmediata</p>
+          </div>
+          <h3>sdsadsd</h3>
+          <span>$1342</span>
+          <button>Comprar</button>
+        </article>
+      </section>
+      <section class="relleno"></section>
     </main>
     <footer></footer>
-    <script src="./js/configurator.js" defer></script>
-    <script src="./js/search.js" defer></script>
+
+    <!-- JavaScript -->
+    <script src="./js/configurator.js" type="text/javascript" defer></script>
+    <script src="./js/search.js" type="text/javascript" defer></script>
+    <script src="./js/menu.js" type="text/javascript" defer></script>
+    <script src="./js/drag.js" type="text/javascript" defer></script>
   </body>
 </html>

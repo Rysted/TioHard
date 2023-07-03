@@ -1,28 +1,33 @@
+@font-face {
+  src: url("../fonts/ZilapGame.ttf") format("truetype");
+  font-family: "Zilap-Game";
+}
+
 :root {
   --html: #fbfbfb;
   --secondary: #201b3a;
-  --tertiary: #2f2949;
+  --tertiary: #383253;
   --text: #020202;
   --paragraph: #dedede;
   --senary: #9a9a9a;
-  --septenary: #4a35ce;
+  --septenary: #c83dde;
 }
 
 [data-theme="dark"] {
   --html: #131026; /* HTML */
-  --secondary: #201b3a; /* Highlighted, Header, Footer */
+  --secondary: #1a162e; /* Highlighted, Header, Footer */
   --tertiary: #2f2949;
   --text: #fbfbfb; /* Buttons */
   --paragraph: #dedede; /* Title */
   --senary: #9a9a9a; /* paragraph */
-  --septenary: #4a35ce; /* Important */
+  --septenary: #c83dde; /* Important */
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   /* outline: 0.1rem solid #1b1997; */
 }
 
@@ -39,21 +44,14 @@ ul {
   list-style: none;
 }
 
-img {
-  display: block;
-}
-
-svg {
-  display: block;
-}
-
 /*' highlighted */
 .highlighted-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background-color: #201b3a;
+  background-color: var(--secondary);
+  user-select: none;
 }
 
 .contact__list {
@@ -64,6 +62,7 @@ svg {
 
 .contact__img {
   width: 3.5rem;
+  display: block;
 }
 
 .selected-mode {
@@ -82,6 +81,13 @@ svg {
 }
 
 /*' Header */
+#header-sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 7;
+}
+
 .header {
   background-color: var(--secondary);
   padding: 0.5rem 1rem;
@@ -89,6 +95,7 @@ svg {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  user-select: none;
 }
 
 .burgerMenu {
@@ -103,18 +110,62 @@ svg {
 
 .burgerMenu-svg {
   width: 4.5rem;
+  display: block;
 }
 
 .logo-tiohard {
   width: 14rem;
+  display: block;
 }
 
-.nav__item {
+/*' Menu */
+.nav__button-close {
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2rem;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.nav__close-menu {
+  display: block;
+  width: 2rem;
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: opacity 0.2s ease;
+}
+
+.header__nav {
   display: none;
 }
 
-.login-item {
-  display: block;
+.nav {
+  display: none;
+  background-color: var(--html);
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 2rem;
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  row-gap: 2rem;
+}
+
+.nav__link {
+  color: var(--text);
 }
 
 .login__link {
@@ -124,7 +175,7 @@ svg {
   align-items: center;
 }
 
-.login__svg {
+.login__img {
   width: 3rem;
 }
 
@@ -144,6 +195,7 @@ svg {
 
 .form-search__img {
   width: 2rem;
+  display: block;
 }
 
 .form-search__icon {
@@ -163,9 +215,12 @@ svg {
   padding-top: 0.5rem;
   padding-right: 2rem;
   padding-bottom: 0.5rem;
-  font-weight: bold;
   color: var(--tertiary);
   border: none;
+}
+
+.form-search__input::placeholder {
+  font-weight: bold;
 }
 
 .form-search__input:focus {
@@ -173,12 +228,16 @@ svg {
 }
 
 .form-search__clear {
-  opacity: 0;
-  padding: 0.2rem;
   position: absolute;
-  right: 0.2rem;
+  opacity: 0;
+  width: 1.5rem;
+  right: 0.4rem;
   top: 50%;
   transform: translateY(-50%);
+  stroke: #131026;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   transition: opacity 0.2s ease;
 }
 
@@ -209,46 +268,113 @@ svg {
   }
 }
 
-/*' Main */
-main {
-  padding: 100rem 0;
-}
-
-/*' banner-upgrade */
-/* .banner-upgrade {
-  height: 100vh;
-  padding: 2rem;
+/*' campaign */
+.campaign {
+  background-image: url(../image/phone/space-vortex-phone.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 50rem;
+  margin-bottom: 6rem;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  background-image: url(../image/celular/joshua-kettle.jpg);
+  row-gap: 2rem;
+  user-select: none;
 }
 
-.upgrade__img-wrapper {
+.campaign::before {
+  content: "";
+  width: 100%;
   height: 100%;
+  opacity: 0.8;
+  position: absolute;
+  background-color: var(--secondary);
 }
 
-.combo {
-  animation: moveUpDown 2s ease-in-out infinite;
+.campaign__title {
+  position: relative;
+  z-index: 1;
+  font-size: 4rem;
+  font-weight: 100;
+  text-align: center;
+  color: white;
+  font-family: "Zilap-Game";
+  animation: lightOnOff 4s infinite, blurText 10s infinite;
 }
 
-@keyframes moveUpDown {
+.campaign__img {
+  width: 20rem;
+  animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
   0% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(-1rem);
   }
-  100% {
+  0% {
     transform: translateY(0);
   }
-} 
-
-.upgrade__img {
-  margin-top: 2rem;
 }
-*/
+
+.campaign__link {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 0.5rem;
+  border: 0.2rem solid cyan;
+  border-radius: 1.5rem;
+}
+
+.campaign__link:hover {
+  text-shadow: 2px -1px 1px violet, 4px -2px 1px cyan;
+  animation-name: blurText;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+}
+
+@keyframes blurText {
+  1% {
+    filter: blur(0.1rem);
+  }
+  3% {
+    filter: blur(0);
+  }
+  4% {
+    filter: blur(0.1rem);
+  }
+  5% {
+    filter: blur(0);
+  }
+}
+
+.campaign__text {
+  display: block;
+  font-family: "Zilap-Game";
+  padding: 1rem;
+  font-size: 2rem;
+  border: 0.2rem solid violet;
+  border-radius: 1rem;
+}
+
+@keyframes lightOnOff {
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 2px -1px 1px violet, 4px -2px 1px cyan;
+  }
+}
+
+.relleno {
+  padding-bottom: 50rem;
+}
 
 /*! ------------------ */
 /*!    Query Tablet    */
@@ -256,6 +382,38 @@ main {
 @media (min-width: 480px) {
   .logo-tiohard {
     width: 20rem;
+  }
+
+  /*' Menu */
+  .nav__close-menu {
+    width: 3rem;
+  }
+
+  .nav__list {
+    font-size: 3.5rem;
+    row-gap: 3rem;
+  }
+
+  /*' Search */
+  .form-search {
+    padding: 1rem 2rem;
+  }
+
+  .form-search__clear {
+    right: 2.2rem;
+  }
+
+  /*' campaign */
+  .campaign__title {
+    font-size: 5rem;
+  }
+
+  .campaign__img {
+    width: 30rem;
+  }
+
+  .campaign__text {
+    font-size: 3rem;
   }
 }
 /*! ------------------ */
@@ -273,26 +431,62 @@ main {
 
   /*' Header */
   .header {
-    padding: 0rem 2rem;
+    padding: 1rem 2rem;
   }
 
   .burgerMenu {
     display: none;
   }
 
-  .nav__item {
+  .login-phone {
+    display: none;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .header__nav {
     display: block;
   }
 
   .nav__list {
     display: flex;
-    align-items: center;
-    font-size: 2rem;
+    flex-direction: row;
     column-gap: 2rem;
+    font-size: 2rem;
+    row-gap: unset;
   }
 
   .nav__link {
-    color: #ffffff;
+    color: white;
+  }
+
+  /*' Search */
+  .form-search {
+    padding: 1rem 8rem;
+  }
+
+  .form-search__clear {
+    right: 8.2rem;
+  }
+
+  /*' campaign */
+  .campaign {
+    background-image: url(../image/pc/space-vortex-pc.png);
+    height: 60rem;
+  }
+
+  .campaign__title {
+    font-size: 6rem;
+  }
+
+  .campaign__img {
+    width: 40rem;
+  }
+
+  .campaign__text {
+    font-size: 4rem;
   }
 }
 /*! ------------------ */
@@ -313,15 +507,15 @@ main {
   }
 
   .logo-tiohard {
-    width: 40rem;
+    width: 30rem;
   }
 
   .nav__list {
-    font-size: 3rem;
+    font-size: 3.5rem;
     column-gap: 3rem;
   }
 
-  .login__svg {
+  .login__img {
     width: 6rem;
   }
 
