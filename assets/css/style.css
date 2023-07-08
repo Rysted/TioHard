@@ -415,6 +415,7 @@ a {
   margin-bottom: 5rem;
   color: var(--text);
   font-size: 4rem;
+  user-select: none;
 }
 
 .bestSellers__products {
@@ -453,7 +454,7 @@ a {
   background-color: var(--secondary);
   width: 100%;
   opacity: 0.8;
-  content: "Ver mas informacion";
+  content: "Ver más información";
   padding: 1rem;
   text-align: center;
   font-size: 2rem;
@@ -561,8 +562,9 @@ a {
   display: block;
   text-align: center;
   font-size: 2.6rem;
-  padding: 0.8rem;
+  padding: 1rem;
   border-radius: 0 0 0.5rem 0.5rem;
+  user-select: none;
 }
 
 /*! ------------------ */

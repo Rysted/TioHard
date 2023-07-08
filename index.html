@@ -273,7 +273,7 @@
             />
             <source
               media="(min-width: 768px)"
-              srcset="/assets/image/pc/grafica.png"
+              srcset="./assets/image/pc/grafica.png"
             />
             <img
               class="campaign__img"
@@ -319,8 +319,9 @@
               <div class="product__card-header">
                 <img
                   class="product__img"
-                  src="./assets/image/products/ROG-RYUJIN-III-360-ARGB-White-Edition.png"
+                  src="./assets/image/products/rog-ryujin-argb-white-edition.png"
                   alt="Imagen del producto"
+                  loading="lazy"
                 />
               </div>
               <div class="product__card-main">
@@ -330,15 +331,12 @@
                 <span class="product__price">$250.000</span>
               </div>
             </a>
-            <button
-              href="#carrito"
-              class="product__addcart"
-              aria-label="Añadir al carrito"
-            >
+            <button class="product__addcart" aria-label="Añadir al carrito">
               <img
                 class="product__cart-img"
                 src="./assets/image/icons/cart.svg"
                 alt="Icono del carrito de compras"
+                loading="lazy"
               />
               <span class="product__cart-title">Añadir al carrito</span>
             </button>
@@ -359,8 +357,9 @@
               <div class="product__card-header">
                 <img
                   class="product__img"
-                  src="./assets/image/products/ASUS-TUF-Gaming-Radeon-RX-7900-XTX-OC-Edition-24GB-GDDR6.png"
+                  src="./assets/image/products/asus-tuf-gaming-radeon-rx-7900-xtx-oc-edition-24gb-gddr6.png"
                   alt="Imagen del producto"
+                  loading="lazy"
                 />
               </div>
               <div class="product__card-main">
@@ -369,6 +368,7 @@
                     class="product__delivery-img"
                     src="./assets/image/icons/delivery-truck.svg"
                     alt="Icono del camión de entregas"
+                    loading="lazy"
                   />
                   <p class="product__delivery-title">Entrega inmediata</p>
                 </div>
@@ -387,6 +387,7 @@
                 class="product__cart-img"
                 src="./assets/image/icons/cart.svg"
                 alt="Icono del carrito de compras"
+                loading="lazy"
               />
               <span class="product__cart-title">Añadir al carrito</span>
             </button>
@@ -407,8 +408,9 @@
               <div class="product__card-header">
                 <img
                   class="product__img"
-                  src="./assets/image/products/ROG-Strix-Helios-EVA-Edition.png"
+                  src="./assets/image/products/rog-strix-helios-eva-edition.png"
                   alt="Imagen del producto"
+                  loading="lazy"
                 />
               </div>
               <div class="product__card-main">
@@ -417,6 +419,7 @@
                     class="product__delivery-img"
                     src="./assets/image/icons/delivery-truck.svg"
                     alt="Icono del camión de entregas"
+                    loading="lazy"
                   />
                   <p class="product__delivery-title">Entrega inmediata</p>
                 </div>
@@ -433,6 +436,7 @@
                 class="product__cart-img"
                 src="./assets/image/icons/cart.svg"
                 alt="Icono del carrito de compras"
+                loading="lazy"
               />
               <span class="product__cart-title">Añadir al carrito</span>
             </button>
@@ -446,9 +450,27 @@
           </article>
         </div>
       </section>
+
       <section class="relleno"></section>
     </main>
-    <footer></footer>
+
+    <footer>
+      <img src="./assets/image/logo/logo.svg" alt="" width="200px" />
+      <nav class="footer-nav">
+        <h4>SOPORTE</h4>
+        <ul class="footer-nav__list">
+          <li class="footer-nav__item">
+            <a href="#" class="footer-nav__link">Politicas de Seguridad</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="#" class="footer-nav__link">Garantia</a>
+          </li>
+          <li class="footer-nav__item">
+            <a href="#" class="footer-nav__link">Boton de Arrepentimiento</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
 
     <!-- JavaScript -->
     <script src="./assets/js/config.js" type="text/javascript" defer></script>
