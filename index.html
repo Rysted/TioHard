@@ -37,54 +37,56 @@
     <title>TioHard - Tu tienda confiable de hardware de computación</title>
   </head>
   <body>
-    <section class="highlighted-container">
-      <ul class="contact__list">
-        <li class="contact__item">
-          <a
-            class="contact__link"
-            rel="nofollow noopener"
-            target="_blank"
-            href="#"
-            aria-label="Enlace a la página de Facebook"
-          >
-            <img
-              class="contact__img"
-              src="./assets/image/icons/facebook.svg"
-              alt="Icono de Facebook"
-            />
-          </a>
-        </li>
-        <li class="contact__item">
-          <a
-            class="contact__link"
-            rel="nofollow noopener"
-            target="_blank"
-            href="#"
-            aria-label="Enlace a la página de Instagram"
-          >
-            <img
-              class="contact__img"
-              src="./assets/image/icons/instagram.svg"
-              alt="Icono de Instagram"
-            />
-          </a>
-        </li>
-        <li class="contact__item">
-          <a
-            class="contact__link"
-            rel="nofollow noopener"
-            target="_blank"
-            href="#"
-            aria-label="Enlace a la página de WhatsApp"
-          >
-            <img
-              class="contact__img"
-              src="./assets/image/icons/whatsapp.svg"
-              alt="Icono de WhatsApp"
-            />
-          </a>
-        </li>
-      </ul>
+    <section class="highlighted-container" id="highlighted">
+      <nav>
+        <ul class="contact__list">
+          <li class="contact__item">
+            <a
+              class="contact__link"
+              rel="nofollow noopener"
+              target="_blank"
+              href="#"
+              aria-label="Enlace a la página de Facebook"
+            >
+              <img
+                class="contact__img"
+                src="./assets/image/icons/facebook.svg"
+                alt="Icono de Facebook"
+              />
+            </a>
+          </li>
+          <li class="contact__item">
+            <a
+              class="contact__link"
+              rel="nofollow noopener"
+              target="_blank"
+              href="#"
+              aria-label="Enlace a la página de Instagram"
+            >
+              <img
+                class="contact__img"
+                src="./assets/image/icons/instagram.svg"
+                alt="Icono de Instagram"
+              />
+            </a>
+          </li>
+          <li class="contact__item">
+            <a
+              class="contact__link"
+              rel="nofollow noopener"
+              target="_blank"
+              href="#"
+              aria-label="Enlace a la página de WhatsApp"
+            >
+              <img
+                class="contact__img"
+                src="./assets/image/icons/whatsapp.svg"
+                alt="Icono de WhatsApp"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
 
       <select
         class="selected-mode"
@@ -124,7 +126,7 @@
           <ul class="nav__list">
             <li class="nav__item">
               <a
-                href="#"
+                href="#highlighted"
                 class="nav__link"
                 rel="nofollow"
                 aria-label="Enlace a la página principal"
@@ -133,7 +135,7 @@
             </li>
             <li class="nav__item">
               <a
-                href="#campaign"
+                href="#bestsellers"
                 class="nav__link"
                 rel="nofollow"
                 aria-label="Enlace a la página destacada"
@@ -142,7 +144,7 @@
             </li>
             <li class="nav__item">
               <a
-                href="#bestSellers"
+                href="#"
                 class="nav__link"
                 rel="nofollow"
                 aria-label="Enlace a la página de armado de PC"
@@ -189,6 +191,7 @@
           id="search_input"
           placeholder="Buscar productos, marcas o categorías"
           name="keywords"
+          required
         />
         <svg
           aria-label="Botón de limpiar búsqueda"
@@ -222,48 +225,50 @@
             ></path>
           </svg>
         </button>
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a
-              href="#campaign"
-              class="nav__link"
-              rel="nofollow"
-              aria-label="Enlace a la página principal"
-              >Principal</a
-            >
-          </li>
-          <li class="nav__item">
-            <a
-              href="#bestSellers"
-              class="nav__link"
-              rel="nofollow"
-              aria-label="Enlace a la página destacada"
-              >Productos</a
-            >
-          </li>
-          <li class="nav__item">
-            <a
-              href="#"
-              class="nav__link"
-              rel="nofollow"
-              aria-label="Enlace a la página de armado de PC"
-              >Categorías</a
-            >
-          </li>
-          <li class="nav__item">
-            <a
-              href="#"
-              class="nav__link"
-              aria-label="Ir a la página de inicio de sesión"
-              >Iniciar sesión</a
-            >
-          </li>
-        </ul>
+        <nav>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a
+                href="#campaign"
+                class="nav__link"
+                rel="nofollow"
+                aria-label="Enlace a la página principal"
+                >Principal</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="#bestSellers"
+                class="nav__link"
+                rel="nofollow"
+                aria-label="Enlace a la página destacada"
+                >Productos</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="#"
+                class="nav__link"
+                rel="nofollow"
+                aria-label="Enlace a la página de armado de PC"
+                >Categorías</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="#"
+                class="nav__link"
+                aria-label="Ir a la página de inicio de sesión"
+                >Iniciar sesión</a
+              >
+            </li>
+          </ul>
+        </nav>
       </nav>
     </section>
 
     <main>
-      <section class="campaign" id="campaign">
+      <section class="campaign">
         <h1 class="campaign__title">Regalate un upgrade</h1>
         <div class="campaign__img-container">
           <picture>
@@ -307,7 +312,7 @@
         </a>
       </section>
 
-      <section class="bestSellers" id="bestSellers">
+      <section class="bestSellers" id="bestsellers">
         <h2 class="bestSellers__title">LOS MÁS VENDIDOS</h2>
         <div class="bestSellers__products">
           <article class="product">
@@ -454,22 +459,156 @@
       <section class="relleno"></section>
     </main>
 
-    <footer>
-      <img src="./assets/image/logo/logo.svg" alt="" width="200px" />
-      <nav class="footer-nav">
-        <h4>SOPORTE</h4>
-        <ul class="footer-nav__list">
-          <li class="footer-nav__item">
-            <a href="#" class="footer-nav__link">Politicas de Seguridad</a>
-          </li>
-          <li class="footer-nav__item">
-            <a href="#" class="footer-nav__link">Garantia</a>
-          </li>
-          <li class="footer-nav__item">
-            <a href="#" class="footer-nav__link">Boton de Arrepentimiento</a>
-          </li>
-        </ul>
-      </nav>
+    <footer class="footer">
+      <section class="footer__section">
+        <img
+          class="footer__logo"
+          src="./assets/image/logo/logo.svg"
+          alt="Imagen Logo de tiohard"
+        />
+      </section>
+
+      <section class="footer__section footer__flex">
+        <article class="footer__article">
+          <h4 class="footer__title">NEWSLETTER</h4>
+          <form class="footer__form" action="">
+            <label for="email" class="footer__label"
+              >¡Recibí ofertas exclusivas y más!</label
+            >
+            <div class="footer__form-wrapper">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Tu correo electrónico"
+                class="footer__input"
+                required
+              />
+              <input type="submit" value="Confirmar" class="footer__submit" />
+            </div>
+          </form>
+        </article>
+
+        <article class="footer__article">
+          <h4 class="footer__title">SEGUINOS EN NUESTRAS REDES</h4>
+          <nav>
+            <ul class="footer__social-list">
+              <li class="footer__social-item">
+                <a
+                  rel="nofollow noopener"
+                  target="_blank"
+                  href="#"
+                  aria-label="Enlace a la página de Facebook"
+                  title="Página de Facebook de TioHard"
+                  class="footer__social-link"
+                >
+                  <img
+                    src="./assets/image/icons/facebook.svg"
+                    alt="Icono de Facebook"
+                    class="footer__social-icon"
+                  />
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  rel="nofollow noopener"
+                  target="_blank"
+                  href="#"
+                  aria-label="Enlace a la página de Instagram"
+                  title="Página de Instagram de TioHard"
+                  class="footer__social-link"
+                >
+                  <img
+                    src="./assets/image/icons/instagram.svg"
+                    alt="Icono de Instagram"
+                    class="footer__social-icon"
+                  />
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a
+                  rel="nofollow noopener"
+                  target="_blank"
+                  href="#"
+                  aria-label="Enlace a la página de WhatsApp"
+                  title="Página de WhatsApp de TioHard"
+                  class="footer__social-link"
+                >
+                  <img
+                    src="./assets/image/icons/whatsapp.svg"
+                    alt="Icono de WhatsApp"
+                    class="footer__social-icon"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </section>
+
+      <section class="footer__section footer__flex">
+        <article class="footer__article">
+          <h4 class="footer__title">SOPORTE</h4>
+          <nav>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a
+                  href="#"
+                  aria-label="Enlace a la página de politicas de seguridad"
+                  class="footer__link"
+                  >Politicas de Seguridad</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="#"
+                  aria-label="Enlace a la página de garantia"
+                  class="footer__link"
+                  >Garantia</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="#"
+                  aria-label="Enlace a la página de arrepentimiento"
+                  class="footer__link"
+                  >Botón de Arrepentimiento</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </article>
+
+        <article class="footer__article">
+          <h4 class="footer__title">VENTAS</h4>
+          <nav>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a
+                  href="mailto:ventas@tiohard.com.ar"
+                  aria-label="Enlace al correo de ventas"
+                  class="footer__link"
+                  >ventas@tiohard.com.ar</a
+                >
+              </li>
+              <li class="footer__item">
+                <a
+                  href="mailto:atencionalcliente@tiohard.com.ar"
+                  aria-label="Enlace al correo de atención al cliente"
+                  class="footer__link"
+                  >atencionalcliente@tiohard.com.ar</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </article>
+      </section>
+
+      <section class="footer__section">
+        <span class="footer__copyright">
+          ©2023 TioHard. Todos los derechos reservados.
+        </span>
+      </section>
     </footer>
 
     <!-- JavaScript -->
